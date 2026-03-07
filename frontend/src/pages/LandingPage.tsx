@@ -12,7 +12,7 @@ export default function LandingPage() {
                       <br/>
             <span className="text-pink-600">Conversations</span> Into Revenue
           </h1>
-          <p className=" capitalize">
+          <p className=" capitalize"> 
             Voxa is an intelligent communication system that autonomously
             manages WhatsApp chats and web calls — capturing leads, qualifying
             prospects, and delivering real-time insights for faster growth.
