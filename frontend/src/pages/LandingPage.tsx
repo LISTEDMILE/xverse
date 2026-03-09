@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
+
 
 type Props = {
   data: string;
@@ -81,6 +84,62 @@ export default function LandingPage() {
       ],
     },
   ];
+
+  const valueMatricsTop = [
+    {
+      title: "Higher Lead Conversion Rates",
+      para: "Turn more visitors into qualified customers with a conversion-focused strategy. By combining optimized landing pages, clear calls-to-action, and data-driven user journeys, we remove friction from the buying process and guide prospects toward taking action.",
+      img: "/LandingPage/section7ValueMatrics/higherLead.png",
+    },
+    {
+      title: "70% Faster Response Time",
+      para: "Experience lightning-fast performance with optimized processing and intelligent caching. Our system delivers results up to 70% quicker, reducing waiting time and improving overall productivity.",
+      img: "/LandingPage/section7ValueMatrics/faster.jpg",
+    },
+    {
+      title: "3× More Conversations  Handled",
+      para: "A UI element (like in a website/app) that shows conversation details inside a text container or box?",
+      img: "/LandingPage/section7ValueMatrics/more.jpg",
+    },
+  ];
+
+  const trustSecurity = [
+    {
+      title: "Enterprise-grade security",
+      para: "Enterprise-grade security is a comprehensive approach to safeguarding data, systems, and networks at an organizational level.",
+      img: "/LandingPage/section8TrustSecurity/security.png",
+    },
+    {
+      title: "WhatsApp-compatible architecture",
+      para: "Enterprise-grade security is a comprehensive approach to safeguarding data, systems, and networks at an organizational level.",
+      img: "/LandingPage/section8TrustSecurity/watsapp.png",
+    },
+    {
+      title: "Scalable WebRTC infrastructure",
+      para: "Enterprise-grade security is a comprehensive approach to safeguarding data, systems, and networks at an organizational level.",
+      img: "/LandingPage/section8TrustSecurity/scalable.png",
+    },
+    {
+      title: "Data privacy compliant",
+      para: "We collect and process your personal information (such as name, email address, and contact details) solely for the purpose of providing our services and communicating with you.",
+      img: "/LandingPage/section8TrustSecurity/privacy.png",
+    },
+  ];
+
+  const [valueMatricsImgIndex, setValueMatricsImgIndex] = useState(0);
+  const valueMatricsArrSize = valueMatricsTop.length;
+
+  function changeValueMatricsImgIndexNext(step: String) {
+    if (step == "next") {
+      setValueMatricsImgIndex((valueMatricsImgIndex + 1) % valueMatricsArrSize);
+    } else if (step == "prev") {
+      if (valueMatricsImgIndex == 0) {
+        setValueMatricsImgIndex(valueMatricsArrSize - 1);
+      } else {
+        setValueMatricsImgIndex(valueMatricsImgIndex - 1);
+      }
+    }
+  }
   return (
     <>
       <section className=" min-h-screen w-screen flex flex-col sm:flex-row gap-10 justify-center items-center p-6 sm:p-24">
@@ -263,6 +322,98 @@ export default function LandingPage() {
           src="LandingPage/section6HowItWorks/howItWork.png"
           className="w-full h-auto object-cover rounded-2xl"
         />
+      </section>
+
+      <section className=" flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen">
+        {" "}
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold">
+            Value Matrics
+          </h1>
+          <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
+        </div>
+        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center ">
+          <button onClick={() => changeValueMatricsImgIndexNext("prev")} className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit">
+            <FaArrowRight className="rotate-180"/>
+          </button>
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C]/70">
+            <img
+              src={
+                valueMatricsTop[
+                  valueMatricsImgIndex == 0
+                    ? valueMatricsArrSize - 1
+                    : valueMatricsImgIndex - 1
+                ].img
+              }
+              className="w-full h-auto rounded-lg"
+            />
+            <h1 className="font-bold text-lg text-[#A1003D]">
+              {
+                valueMatricsTop[
+                  valueMatricsImgIndex == 0
+                    ? valueMatricsArrSize - 1
+                    : valueMatricsImgIndex - 1
+                ].title
+              }{" "}
+            </h1>
+
+            <p className="text-white text-sm">
+              {
+                valueMatricsTop[
+                  valueMatricsImgIndex == 0
+                    ? valueMatricsArrSize - 1
+                    : valueMatricsImgIndex - 1
+                ].para
+              }
+            </p>
+          </div>
+
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C] scale-110">
+            <img
+              src={valueMatricsTop[valueMatricsImgIndex].img}
+              className="w-full h-auto rounded-lg"
+            />
+            <h1 className="font-bold text-lg text-[#A1003D]">
+              {valueMatricsTop[valueMatricsImgIndex].title}{" "}
+            </h1>
+
+            <p className="text-white text-sm">
+              {valueMatricsTop[valueMatricsImgIndex].para}
+            </p>
+          </div>
+
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C]/70">
+            <img
+              src={
+                valueMatricsTop[
+                  (valueMatricsImgIndex + 1) % valueMatricsArrSize
+                ].img
+              }
+              className="w-full h-auto rounded-lg"
+            />
+            <h1 className="font-bold text-lg text-[#A1003D]">
+              {
+                valueMatricsTop[
+                  (valueMatricsImgIndex + 1) % valueMatricsArrSize
+                ].title
+              }{" "}
+            </h1>
+
+            <p className="text-white text-sm">
+              {
+                valueMatricsTop[
+                  (valueMatricsImgIndex + 1) % valueMatricsArrSize
+                ].para
+              }
+            </p>
+          </div>
+
+          
+
+          <button onClick={() => changeValueMatricsImgIndexNext("next")}className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit">
+            <FaArrowRight />
+          </button>
+        </div>
       </section>
     </>
   );
