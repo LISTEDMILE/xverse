@@ -429,6 +429,99 @@ export default function LandingPage() {
           </button>
         </div>
       </section>
+
+      <div className="relative bg-white h-[200px] overflow-hidden">
+        {" "}
+        {/* Yellow Shape */}
+        <div
+          className="absolute top-0 left-0 w-full h-[200px] scale-125 bg-[#F1C01B]"
+          style={{
+            clipPath:
+              "polygon(0% 70%, 40% 10%, 50% 65%, 190% -120%, 100% 95%, 0% 100%)",
+          }}
+        ></div>
+      </div>
+
+      <section className=" flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen bg-[#F1C01B]">
+        {" "}
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold text-white">
+            Trust & Security
+          </h1>
+          <div className="border-b-6 border-b-white  w-[150px] mt-6 " />
+        </div>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          {trustSecurity.map((ele, index) => {
+            return (
+              <div
+                key={index}
+                className="relative flex flex-col relative p-8 rounded-lg w-full sm:w-[22%] gap-1 bg-white rounded-lg overflow-hidden"
+              >
+                <div className="bg-[#FDEDED] h-18 w-18 rounded-full absolute top-[-15px] left-[-15px] z-0 " />
+
+                <img src={ele.img} className="h-[60px] w-[60px] mb-5 z-10" />
+
+                <h2 className="font-medium text-sm border-b-2 border-black mb-2 z-10">
+                  {ele.title}
+                </h2>
+                <p className="text-xs z-10">{ele.para}</p>
+                <div className="bg-[#FDEDED] h-12 w-12 rounded-full absolute bottom-0 right-0 z-0 " />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen">
+        {" "}
+        {/* Purple Polygon */}
+        <div
+          className="absolute top-0 left-0 w-full h-[40%] 
+  bg-gradient-to-r from-pink-600 to-purple-700
+  [clip-path:polygon(0%_0%,100%_0%,100%_15%,70%_65%,25%_70%,0%_100%)] z-[-10]"
+        ></div>
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold text-white">
+            Why Voxa
+          </h1>
+          <div className="border-b-6 border-b-white w-[150px] mt-6" />
+        </div>
+        <div className="flex flex-col sm:flex-row justify-center gap-12 sm:gap-30  items-center">
+          <img
+            src="LandingPage/section9WhyVoxa/whyVoxa.jpg"
+            className="w-full sm:w-[40%] h-auto rounded-lg shadow-2xl shadow-[#97C588]"
+          />
+          <ul className="flex flex-col gap-6 list-disc text-lg">
+            <li>AI + Analytics in one system</li> <li>Chat + Voice unified</li>{" "}
+            <li>Built for revenue, not vanity metrics</li>{" "}
+            <li>Designed for leadership visibility</li>{" "}
+            <li>Scales without scaling teams</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="flex justify-center py-15 px-6 sm:p-20 w-screen flex-col gap-8 items-center bg-[#FEFFD8]">
+        <p className="text-center w-full sm:w-[70%] font-bold">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+          reprehenderit fugiat reiciendis officiis iusto sed quia minus ab amet
+          voluptate? Minus totam exercitationem error nemo. Aspernatur modi
+          accusamus omnis quo!
+        </p>
+        <div className="flex gap-6 justify-center">
+          <Link
+            to={""}
+            className="bg-[#2FBEB7] rounded-sm py-2 px-6 text-white"
+          >
+            Start Free Trial
+          </Link>
+          <Link
+            to={""}
+            className="bg-gradient-to-b from-[#F57B6F] to-[#FEACA3] rounded-sm py-2 px-6 text-white"
+          >
+            Book A Live Demo
+          </Link>
+        </div>
+      </section>
     </>
   );
 }
