@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 
-
 type Props = {
   data: string;
 };
@@ -333,10 +332,24 @@ export default function LandingPage() {
           <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
         </div>
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center ">
-          <button onClick={() => changeValueMatricsImgIndexNext("prev")} className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit">
-            <FaArrowRight className="rotate-180"/>
-          </button>
-          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C]/70">
+          <div className="flex w-full sm:w-fit justify-around">
+            <button
+              onClick={() => changeValueMatricsImgIndexNext("prev")}
+              className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit"
+            >
+              <FaArrowRight className="rotate-180" />
+            </button>
+
+            {/** only for mobile */}
+            <button
+              onClick={() => changeValueMatricsImgIndexNext("next")}
+              className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit sm:hidden"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
+
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex-col gap-6 bg-[#F17EAA5C]/70 hidden sm:flex">
             <img
               src={
                 valueMatricsTop[
@@ -368,7 +381,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C] scale-110">
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C] sm:scale-110">
             <img
               src={valueMatricsTop[valueMatricsImgIndex].img}
               className="w-full h-auto rounded-lg"
@@ -382,7 +395,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6 bg-[#F17EAA5C]/70">
+          <div className="w-full sm:w-[27%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] hidden sm:flex flex-col gap-6 bg-[#F17EAA5C]/70">
             <img
               src={
                 valueMatricsTop[
@@ -408,9 +421,10 @@ export default function LandingPage() {
             </p>
           </div>
 
-          
-
-          <button onClick={() => changeValueMatricsImgIndexNext("next")}className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit">
+          <button
+            onClick={() => changeValueMatricsImgIndexNext("next")}
+            className="p-4 font-bold text-2xl bg-[#F65B97] text-white rounded-full h-fit hidden sm:inline-block"
+          >
             <FaArrowRight />
           </button>
         </div>
