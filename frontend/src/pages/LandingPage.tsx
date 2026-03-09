@@ -169,7 +169,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center items-center w-screen">
+      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen">
         <img
           className="absolute top-20 left-0 w-20 sm:w-45 z-[-10] h-auto"
           src="LandingPage/section4TotalControl/sideImage.png"
@@ -210,36 +210,59 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center items-center w-screen bg-[#FCE18B6E]/57">
-       
+      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen bg-[#FCE18B6E]/57">
         <div className="flex flex-col items-center w-full sm:w-[60%]">
           <h1 className="text-2xl sm:text-5xl text-center font-semibold">
-Product Spilit          </h1>
+            Product Spilit{" "}
+          </h1>
           <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
         </div>
-        <div className="flex flex-col sm:flex-row flex-wrap w-full sm:w-[80vw] gap-12 justify-around">
-          {section4TotalControl.map((ele) => {
-            return (
-              <div className="rounded-md overflow-hidden w-full sm:w-[40%] flex shadow-xl shadow-black flex-col sm:flex-row">
-                <div className="w-full sm:w-[50%] relative">
-                  <img src={ele.img} className="w-full h-full object-cover" />
-                  <div
-                    className="absolute top-0 right-0 h-full w-32 bg-white"
-                    style={{ clipPath: "polygon(60% 0, 100% 0, 100% 100%)" }}
-                  ></div>{" "}
-                </div>
-                <div className="flex flex-col gap-6 w-full sm:w-[50%] p-6 bg-white">
-                  <h3 className="text-2xl font-bold">{ele.title}</h3>
-                  <ul className="flex flex-col gap-3 list-[circle] marker:text-yellow-400 marker:text-xl pl-5 text-xs">
-                    {ele.points.map((p) => {
-                      return <li>{p}</li>;
-                    })}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
+        <div className="flex flex-col sm:flex-row flex-wrap w-full sm:w-[80vw] gap-12 justify-around mt-20">
+          <div className="relative -top-20 w-full sm:w-[40%] rounded-lg shadow-lg p-10 shadow-[#2A76B2] bg-[#74B3E5] flex flex-col gap-6">
+            <h1 className="bg-white py-2 px-4 rounded-full w-full text-center font-bold text-2xl">
+              Voxa Communication
+            </h1>
+            <img
+              src="LandingPage/section5ProductSpilit/voxaC.png"
+              className="w-full h-auto rounded-lg"
+            />
+            <ul className="flex flex-col gap-3 list-[circle] marker:text-xl pl-5 text-lg text-white ">
+              <li>AI agents handle WhatsApp & web calls</li>
+              <li>Qualify leads automatically</li>
+              <li>Follow-ups without human dependency</li>
+              <li>Consistent brand communication</li>
+            </ul>
+          </div>
+
+          <div className="w-full sm:w-[40%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6">
+            <h1 className="bg-white py-2 px-4 rounded-full w-full text-center font-bold text-2xl">
+              Voxa Communication + Analytics
+            </h1>
+            <img
+              src="LandingPage/section5ProductSpilit/voxaCAnalytics.jpg"
+              className="w-full h-auto rounded-lg"
+            />
+            <ul className="flex flex-col gap-3 list-[circle] marker:text-xl pl-5 text-lg text-white ">
+              <li>Real-time dashboards</li>
+              <li>Lead scoring & prioritization</li>
+              <li>Conversion trend analysis</li>
+              <li>Performance & response analytics</li>
+            </ul>
+          </div>
         </div>
+      </section>
+
+      <section className=" flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen bg-[#FFE7E482]/49">
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold">
+            How It Works
+          </h1>
+          <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
+        </div>
+        <img
+          src="LandingPage/section6HowItWorks/howItWork.png"
+          className="w-full h-auto object-cover rounded-2xl"
+        />
       </section>
     </>
   );
