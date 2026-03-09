@@ -46,10 +46,10 @@ export default function LandingPage() {
     },
   ];
 
-  const section3TotalControl = [
+  const section4TotalControl = [
     {
       title: "AI-Driven Chat & Voice",
-      img: "one.png",
+      img: "/LandingPage/section4TotalControl/one.png",
       points: [
         "Intelligent conversations powered by real-time AI across chat and voice.",
         "Seamless AI communication that understands, responds, and adapts instantly.",
@@ -58,7 +58,7 @@ export default function LandingPage() {
     },
     {
       title: "24/7 Automated Engagement",
-      img: "two.png",
+      img: "/LandingPage/section4TotalControl/two.png",
       points: [
         "Turn every moment into an opportunity with intelligent, nonstop customer interaction.",
         "Capture, convert, and connect — even while you sleep.",
@@ -66,7 +66,7 @@ export default function LandingPage() {
     },
     {
       title: "Inbound + Outbound Handling",
-      img: "three.png",
+      img: "/LandingPage/section4TotalControl/three.png",
       points: [
         "Optimizing Every Touchpoint of Your Supply Chain",
         "Precision Handling from Arrival to Departure",
@@ -74,7 +74,7 @@ export default function LandingPage() {
     },
     {
       title: "24/7 Automated Engagement",
-      img: "four.png",
+      img: "/LandingPage/section4TotalControl/four.png",
       points: [
         "Turn every moment into an opportunity with intelligent, nonstop customer interaction.",
         "Capture, convert, and connect — even while you sleep.",
@@ -83,7 +83,7 @@ export default function LandingPage() {
   ];
   return (
     <>
-      <section className=" min-h-screen w-screen flex flex-col sm:flex-row gap-16 justify-center items-center p-6 sm:p-24">
+      <section className=" min-h-screen w-screen flex flex-col sm:flex-row gap-10 justify-center items-center p-6 sm:p-24">
         <div className="absolute inset-0 bg-[url('/LandingPage/section1/bg.png')]  bg-cover bg-center opacity-40 h-full w-full z-[-10] " />
 
         <div className="flex flex-col gap-6 w-full sm:w-[50%] justify-center h-fit sm:h-full ">
@@ -115,11 +115,11 @@ export default function LandingPage() {
 
         <img
           src="/LandingPage/section1/sideImage.png"
-          className="h-[450px] w-[550px] object-cover rounded-2xl"
+          className=" w-[650px]  rounded-2xl"
         />
       </section>
 
-      <section className="flex flex-col gap-24 py-15 px-6 sm:p-20 bg-[#FFE6726E]/57 items-center min-h-screen justify-center">
+      <section className="flex flex-col gap-24 py-15 px-6 sm:p-20 bg-[#FFE6726E]/57 items-center justify-center">
         <h1 className="text-2xl font-bold sm:text-3xl">
           Your <DiffSpan data="Conversations" /> Are Costing{" "}
           <DiffSpan data="You Revenue" />{" "}
@@ -146,7 +146,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="flex justify-center flex-col sm:flex-row gap-10 py-15 px-6 sm:p-20 items-center min-h-screen w-screen bg-[#FFEBF3]">
+      <section className="flex justify-center flex-col sm:flex-row gap-10 py-15 px-6 sm:p-20 items-center w-screen bg-[#FFEBF3]">
         <div className="w-full sm:w-[50%] flex justify-center items-center">
           <video
             src="/LandingPage/section3Video/section3Video.mp4"
@@ -169,18 +169,76 @@ export default function LandingPage() {
         </div>
       </section>
 
-          <section className="flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center min-h-screen items-center w-screen">
-              <div className="flex flex-col items-center w-full sm:w-[60%]">
-        <h1 className=" text-5xl text-center font-semibold">One Intelligent System. Total Control 
-                  Over Conversations.</h1>
-              <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 "/></div>
-        <div>
-                  <div>
-                      {section3TotalControl.map(ele => {
-                          return (<>
-                          </>)
-                      })}
-          </div>
+      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center items-center w-screen">
+        <img
+          className="absolute top-20 left-0 w-20 sm:w-45 z-[-10] h-auto"
+          src="LandingPage/section4TotalControl/sideImage.png"
+        />
+        <img
+          className="absolute bottom-20 rotate-z-180 opacity-50 right-0 w-20 sm:w-45 h-auto"
+          src="LandingPage/section4TotalControl/sideImage.png"
+        />
+
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold">
+            One Intelligent System. Total Control Over Conversations.
+          </h1>
+          <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
+        </div>
+        <div className="flex flex-col sm:flex-row flex-wrap w-full sm:w-[80vw] gap-12 justify-around">
+          {section4TotalControl.map((ele) => {
+            return (
+              <div className="rounded-md overflow-hidden w-full sm:w-[40%] flex shadow-xl shadow-black flex-col sm:flex-row">
+                <div className="w-full sm:w-[50%] relative">
+                  <img src={ele.img} className="w-full h-full object-cover" />
+                  <div
+                    className="absolute top-0 right-0 h-full w-32 bg-white"
+                    style={{ clipPath: "polygon(60% 0, 100% 0, 100% 100%)" }}
+                  ></div>{" "}
+                </div>
+                <div className="flex flex-col gap-6 w-full sm:w-[50%] p-6 bg-white">
+                  <h3 className="text-2xl font-bold">{ele.title}</h3>
+                  <ul className="flex flex-col gap-3 list-[circle] marker:text-yellow-400 marker:text-xl pl-5 text-xs">
+                    {ele.points.map((p) => {
+                      return <li>{p}</li>;
+                    })}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center items-center w-screen bg-[#FCE18B6E]/57">
+       
+        <div className="flex flex-col items-center w-full sm:w-[60%]">
+          <h1 className="text-2xl sm:text-5xl text-center font-semibold">
+Product Spilit          </h1>
+          <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
+        </div>
+        <div className="flex flex-col sm:flex-row flex-wrap w-full sm:w-[80vw] gap-12 justify-around">
+          {section4TotalControl.map((ele) => {
+            return (
+              <div className="rounded-md overflow-hidden w-full sm:w-[40%] flex shadow-xl shadow-black flex-col sm:flex-row">
+                <div className="w-full sm:w-[50%] relative">
+                  <img src={ele.img} className="w-full h-full object-cover" />
+                  <div
+                    className="absolute top-0 right-0 h-full w-32 bg-white"
+                    style={{ clipPath: "polygon(60% 0, 100% 0, 100% 100%)" }}
+                  ></div>{" "}
+                </div>
+                <div className="flex flex-col gap-6 w-full sm:w-[50%] p-6 bg-white">
+                  <h3 className="text-2xl font-bold">{ele.title}</h3>
+                  <ul className="flex flex-col gap-3 list-[circle] marker:text-yellow-400 marker:text-xl pl-5 text-xs">
+                    {ele.points.map((p) => {
+                      return <li>{p}</li>;
+                    })}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>
