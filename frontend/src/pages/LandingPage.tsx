@@ -75,12 +75,13 @@ export default function LandingPage() {
       ],
     },
     {
-      title: "24/7 Automated Engagement",
+      title: "Prediction & Forcasting",
       img: "/LandingPage/section4TotalControl/four.png",
-      points: [
-        "Turn every moment into an opportunity with intelligent, nonstop customer interaction.",
-        "Capture, convert, and connect — even while you sleep.",
-      ],
+     points: [
+      "Leverage AI-powered insights to predict customer behavior and demand.",
+      "Make smarter decisions with real-time forecasting and data-driven analytics.",
+      "Anticipate trends and optimize performance before challenges arise.",
+    ],
     },
   ];
 
@@ -150,7 +151,7 @@ export default function LandingPage() {
             <DiffSpan data="Conversations" /> Into Revenue
           </h1>
           <p className=" capitalize">
-            Voxa is an intelligent communication system that autonomously
+            Voxa24 is an intelligent communication system that autonomously
             manages WhatsApp chats and web calls — capturing leads, qualifying
             prospects, and delivering real-time insights for faster growth.
             Primary CTA
@@ -271,14 +272,14 @@ export default function LandingPage() {
       <section className="relative flex justify-center flex-col gap-24 py-15 px-6 sm:p-20 items-center w-screen bg-[#FCE18B6E]/57">
         <div className="flex flex-col items-center w-full sm:w-[60%]">
           <h1 className="text-2xl sm:text-5xl text-center font-semibold">
-            Product Spilit{" "}
+            Our Products{" "}
           </h1>
           <div className="border-b-6 border-b-[#0664B7] w-[150px] mt-6 " />
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap w-full sm:w-[80vw] gap-12 justify-around mt-20">
           <div className="relative -top-20 w-full sm:w-[40%] rounded-lg shadow-lg p-10 shadow-[#2A76B2] bg-[#74B3E5] flex flex-col gap-6">
             <h1 className="bg-white py-2 px-4 rounded-full w-full text-center font-bold text-2xl">
-              Voxa Communication
+              Voxa24 Communication
             </h1>
             <img
               src="LandingPage/section5ProductSpilit/voxaC.png"
@@ -294,7 +295,7 @@ export default function LandingPage() {
 
           <div className="w-full sm:w-[40%] rounded-lg shadow-lg p-10 shadow-[#E9DF8E] bg-[#F9EF98] flex flex-col gap-6">
             <h1 className="bg-white py-2 px-4 rounded-full w-full text-center font-bold text-2xl">
-              Voxa Communication + Analytics
+              Voxa24 Communication + Analytics
             </h1>
             <img
               src="LandingPage/section5ProductSpilit/voxaCAnalytics.jpg"
@@ -482,7 +483,7 @@ export default function LandingPage() {
         ></div>
         <div className="flex flex-col items-center w-full sm:w-[60%]">
           <h1 className="text-2xl sm:text-5xl text-center font-semibold text-white">
-            Why Voxa
+            Why Voxa24
           </h1>
           <div className="border-b-6 border-b-white w-[150px] mt-6" />
         </div>

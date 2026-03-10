@@ -7,8 +7,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="bg-blue-900 py-2 px-8 flex justify-between items-center">
-      <Link to={"/"}>
+      <Link to={"/"} className="flex gap-2 items-center">
         <img src="logo.png" alt="" className="h-[50px] " />
+        <span className="text-2xl text-white   font-bold">Voxa24</span>
       </Link>
       <div className="items-center gap-4 hidden sm:flex">
         <Link to={""} className="text-white underline hover:text-yellow-400">
@@ -24,20 +25,15 @@ export default function Header() {
           Link1
         </Link>
       </div>
-      <div className="hidden sm:inline-block">
+      
         <Link
           to={""}
-          className="text-white  hover:underline bg-gradient-to-b from-[#F57B6F] to-[#FEACA3] rounded-md py-2 px-6 mr-4"
+          className="text-white hidden sm:inline-block  hover:underline bg-gradient-to-b from-[#F57B6F] to-[#FEACA3] rounded-md py-2 px-6 mr-4"
         >
-          Login
+          Client Login
         </Link>
-        <Link
-          to={""}
-          className="text-white hover:underline bg-[#2FBEB7] rounded-md py-2 px-6  "
-        >
-          SignUp
-        </Link>
-      </div>
+      
+      
 
       {!menuOpen ? (
         <GiHamburgerMenu
@@ -67,14 +63,9 @@ export default function Header() {
             to={""}
             className="text-white  hover:underline bg-gradient-to-b from-[#F57B6F] to-[#FEACA3] rounded-md py-2 px-6 mr-4 w-fit"
           >
-            Login
+            Client Login
           </Link>
-          <Link
-            to={""}
-            className="text-white hover:underline bg-[#2FBEB7] rounded-md py-2 px-6 w-fit "
-          >
-            SignUp
-          </Link>
+         
         </div>
       )}
     </div>
