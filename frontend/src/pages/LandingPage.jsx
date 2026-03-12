@@ -2,11 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 
-type Props = {
-  data: string;
-};
 
-function DiffSpan({ data }: Props) {
+function DiffSpan({ data }) {
   return (
     <>
       <span className="text-[#D55586]">{data}</span>
@@ -129,7 +126,7 @@ export default function LandingPage() {
   const [valueMatricsImgIndex, setValueMatricsImgIndex] = useState(0);
   const valueMatricsArrSize = valueMatricsTop.length;
 
-  function changeValueMatricsImgIndexNext(step: String) {
+  function changeValueMatricsImgIndexNext(step) {
     if (step == "next") {
       setValueMatricsImgIndex((valueMatricsImgIndex + 1) % valueMatricsArrSize);
     } else if (step == "prev") {
